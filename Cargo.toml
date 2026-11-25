@@ -1,0 +1,19 @@
+[package]
+name = "blockworld"
+version = "0.1.0"
+edition = "2021"
+
+# Android needs a shared library; cargo-apk packages it into the APK.
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+bevy = "0.15"
+
+[package.metadata.android]
+package = "com.example.blockworld"
+build_targets = ["aarch64-linux-android"]
+
+[package.metadata.android.sdk]
+min_sdk_version = 26
+target_sdk_version = 34
